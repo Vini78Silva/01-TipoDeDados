@@ -2,6 +2,7 @@
 //
 
 #include <iostream>
+#include <climits>
 using namespace std;
 
 int main()
@@ -70,6 +71,23 @@ int main()
 	cout << "Sua idade em dias e: " << dias << endl;
 	cout << "Sua idade em horas e: " << horas << endl;
 	cout << "Sua idade em minutos e: " << minutos << endl;
+
+	cout << "int  max = " << INT_MAX + 1 << "\n";
+	cout << "int  min = " << INT_MIN - 1 << "\n";
+	cout << "short max = " << SHRT_MAX + 11 << "\n";
+
+
+	//double resultado = 0;
+	double tempc = 28;
+	double tempf = tempc * 1.80 + 32;
+	double tempk = tempc + 273.15;
+	cout << "28 graus celsius em Fahrenheit:" << tempf << "\n";
+	cout << "28 graus celsius em Kelvin:" << tempk << "\n";
+
+	long seg = 0;
+	cout << "Digite uma quantidade em segundos: ";
+	cin >> seg;
+	cout << 86400 / 1 << "\n";
 
 	cout << "Qualquer tecla para sair...";
 	system("pause"); // somente no Windows
