@@ -72,8 +72,8 @@ int main()
 	cout << "Sua idade em horas e: " << horas << endl;
 	cout << "Sua idade em minutos e: " << minutos << endl;
 
-	cout << "int  max = " << INT_MAX + 1 << "\n";
-	cout << "int  min = " << INT_MIN - 1 << "\n";
+	cout << "int  max = " << static_cast<long long>(INT_MAX) + 1 << "\n";
+	cout << "int  min = " << static_cast<long long>(INT_MIN) - 1 << "\n";
 	cout << "short max = " << SHRT_MAX + 11 << "\n";
 
 
@@ -81,17 +81,39 @@ int main()
 	double tempc = 28;
 	double tempf = tempc * 1.80 + 32;
 	double tempk = tempc + 273.15;
-	cout << "28 graus celsius em Fahrenheit:" << tempf << "\n";
-	cout << "28 graus celsius em Kelvin:" << tempk << "\n";
+	cout << "28 graus celsius em Fahrenheit: " << tempf << "\n";
+	cout << "28 graus celsius em Kelvin: " << tempk << "\n";
 
 	long seg = 0;
 	cout << "Digite uma quantidade em segundos: ";
 	cin >> seg;
-	cout << 86400 / 1 << "\n";
+	long segpmin = 60;
+	long segphr = 3600;
+	long segpdia = 86400;
+
+	long diasSegundos = seg / segpdia;
+	long restodia = seg % segpdia;
+
+	long horasSegundos = restodia / segphr;
+	long restohr = restodia % segphr;
+
+	long min = restohr / segpmin;
+	long segrestantes = restohr % segpmin;
+
+	cout << "dias: " << diasSegundos << "\n";
+	cout << "horas: " << horasSegundos << "\n";
+	cout << "minutos: " << min << "\n";
+
+	int varTop = 44;
+	int* pvarTop = &varTop;
+	cout << "Endereco da variavel Top: " << pvarTop << "\n";
+	cout << "Valor da variavel Top: " << *pvarTop << "\n";
+	cout << "novo valor da variavel Top: " << 2 * *pvarTop << "\n";
 
 	cout << "Qualquer tecla para sair...";
 	system("pause"); // somente no Windows
 
 
 }
+
 
